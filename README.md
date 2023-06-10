@@ -26,3 +26,6 @@
 
 ## Contributing
 Contributions are welcome! Please fork this repository and submit a pull request with your changes.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/mehdirzfx/WeatherForecast/blob/main/LICENSE) file for details.
