@@ -16,7 +16,7 @@
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
-        tools:text="Karaj" />
+        tools:text="کرج" />
 
     <TextView
         android:id="@+id/txt_countryName"
@@ -34,8 +34,9 @@
         android:layout_height="190dp"
         android:layout_below="@+id/txt_countryName"
         android:layout_centerHorizontal="true"
+        android:contentDescription="TODO"
         android:scaleType="fitXY"
-        android:contentDescription="TODO" />
+        android:src="@drawable/_2d_4x" />
 
     <TextView
         android:id="@+id/txt_status"
@@ -91,18 +92,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                tools:text="0"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="0" />
 
             <TextView
                 android:id="@+id/txt_speed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                tools:text="0"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="18sp"
+                tools:text="0" />
 
 
         </LinearLayout>
@@ -139,12 +140,12 @@
     </RelativeLayout>
 
     <RelativeLayout
-        android:id="@+id/relFab"
+        android:id="@+id/relSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="bottom"
+        android:layout_below="@id/layout_relative"
         android:layout_alignParentBottom="true"
-        android:layout_below="@id/layout_relative">
+        android:gravity="bottom">
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/btn_search"
@@ -162,32 +163,31 @@
             app:fabSize="normal"
             tools:ignore="RelativeOverlap" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <RelativeLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="68dp"
             android:layout_alignParentLeft="true"
-            android:gravity="left"
-            tools:ignore="RtlHardcoded">
+            android:layout_toLeftOf="@id/btn_search"
+            android:layout_marginVertical="15dp"
+            android:layout_marginLeft="15dp"
+
+            android:gravity="center">
 
             <EditText
                 android:id="@+id/et_location"
-                android:layout_width="300dp"
+                android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="2dp"
+                android:autofillHints=""
                 android:background="@drawable/bg_et_search"
                 android:hint="@string/txt_location"
-                android:paddingHorizontal="15dp"
-                android:textSize="18sp"
-                android:singleLine="true"
                 android:maxLength="50"
+                android:paddingHorizontal="15dp"
+                android:singleLine="true"
                 android:textAlignment="gravity"
                 android:textColor="@color/black"
-                tools:ignore="RtlHardcoded"
-                android:autofillHints="" />
-        </LinearLayout>
+                android:textSize="18sp" />
+        </RelativeLayout>
 
     </RelativeLayout>
 
