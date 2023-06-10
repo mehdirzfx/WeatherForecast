@@ -1,7 +1,19 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.WeatherForecast" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#255DFF</item>
+        <item name="colorPrimaryVariant">#255DFF</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#255DFF</item>
+        <item name="colorSecondaryVariant">#255DFF</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" >?attr/colorPrimaryVariant</item>
+        <!--<item name="android:windowLightStatusBar" tools:ignore="NewApi">true</item>-->
+        <item name="android:fontFamily">@font/vazir</item>
+        <!-- Customize your theme here. -->
     </style>
+    <style name="Theme.WeatherForecast" parent="Base.Theme.WeatherForecast" />
 </resources>
