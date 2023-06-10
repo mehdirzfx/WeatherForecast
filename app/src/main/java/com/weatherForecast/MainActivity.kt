@@ -30,14 +30,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val btn_Search = findViewById<FloatingActionButton>(R.id.btn_search)
-        val et_Location = findViewById<EditText>(R.id.et_location)
+        val btnSearch = findViewById<FloatingActionButton>(R.id.btn_search)
+        val etLocation = findViewById<EditText>(R.id.et_location)
         getData("کرج", "fa", "metric")
-        btn_Search.setOnClickListener {
-            if (et_Location.text.equals("")) {
+        btnSearch.setOnClickListener {
+            if (etLocation.text.equals("")) {
                 Toast.makeText(this, "لطفا نام یک شهر را وارد کنید.", Toast.LENGTH_SHORT).show()
             } else {
-                val cityName = et_Location.text.toString()
+                val cityName = etLocation.text.toString()
                 val lang = "fa"
                 val units = "metric"
                 getData(cityName, lang, units)
