@@ -3,8 +3,10 @@ package com.weatherForecast
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import org.json.JSONObject
 import java.io.BufferedReader
+import java.io.FileNotFoundException
 import java.io.InputStream
 import java.io.InputStreamReader
 import java.net.URL
@@ -31,11 +33,18 @@ class MainActivity : AppCompatActivity() {
 
     inner class MyAsyncTask : AsyncTask<String, String, String>() {
         override fun doInBackground(vararg params: String?): String {
-            val url = URL(params[0])
-            val connection = url.openConnection() as HttpsURLConnection
-            connection.connectTimeout = 1500
-            val json = convertStreamToString(connection.inputStream)
-            publishProgress(json)
+            try {
+                val url = URL(params[0])
+                val connection = url.openConnection() as HttpsURLConnection
+                connection.connectTimeout = 1500
+                val json = convertStreamToString(connection.inputStream)
+                publishProgress(json)
+            } catch (e: FileNotFoundException) {
+                //Log.e("MyAsyncTask", "File not found exception: ${e.message}")
+                getData("کرج", "fa", "metric")
+            } catch (e: Exception) {
+                Log.e("MyAsyncTask", "Exception: ${e.message}")
+            }
             return ""
         }
 
