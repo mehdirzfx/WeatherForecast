@@ -6,6 +6,30 @@
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     tools:context=".MainActivity">
+    <androidx.cardview.widget.CardView
+        android:id="@+id/btn_info"
+        android:layout_width="38dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:backgroundTint="#00000000"
+        android:clickable="true"
+        android:foreground="?attr/selectableItemBackground"
+        android:padding="5dp"
+        android:tooltipText="درباره"
+        android:onClick="btnInfo"
+        app:cardCornerRadius="60dp"
+        app:cardElevation="0dp"
+        android:focusable="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:src="@drawable/baseline_info" />
+
+    </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/txt_cityName"
@@ -16,7 +40,7 @@
         android:textColor="@color/white"
         android:textSize="40sp"
         android:textStyle="bold"
-        tools:text="کرج" />
+        tools:text="تهران" />
 
     <TextView
         android:id="@+id/txt_countryName"

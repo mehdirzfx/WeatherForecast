@@ -1,13 +1,16 @@
 package com.weatherForecast
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import org.json.JSONObject
@@ -17,6 +20,7 @@ import java.io.InputStream
 import java.io.InputStreamReader
 import java.net.URL
 import javax.net.ssl.HttpsURLConnection
+
 
 /**
  * @author : Mehdi Rezaei Far
@@ -32,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         val btnSearch = findViewById<FloatingActionButton>(R.id.btn_search)
         val etLocation = findViewById<EditText>(R.id.et_location)
+
         getData("کرج", "fa", "metric")
         btnSearch.setOnClickListener {
             if (etLocation.text.equals("")) {
@@ -43,6 +48,22 @@ class MainActivity : AppCompatActivity() {
                 getData(cityName, lang, units)
             }
         }
+    }
+    fun btnInfo(v : View){
+        if (v.id == R.id.btn_info){
+            showAlertDialog(this@MainActivity, "درباره", R.string.alert_msg)
+        }
+    }
+    private fun showAlertDialog(context: Context, title: String, message: Int) {
+        val builder = AlertDialog.Builder(context)
+        builder.setTitle(title)
+        builder.setMessage(message)
+        builder.setPositiveButton("OK") { dialog, _ ->
+            dialog.dismiss()
+        }
+
+        val alertDialog = builder.create()
+        alertDialog.show()
     }
     private fun getData(cityName: String, lang: String, units: String) {
         val token = "df80aaeecbec20e9dad24cb07f02270f"
